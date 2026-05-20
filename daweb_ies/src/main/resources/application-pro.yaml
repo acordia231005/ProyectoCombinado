@@ -1,11 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://dpg-d80p7gf7f7vs73d3lq20-a.ohio-postgres.render.com:5432/database_bhoi
-    username: database_bhoi_user
-    password: hUc1N1cDt1ocGci0yjMZuZvq8GU0Yxyo
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update   # create | update | validate | none
     show-sql: true

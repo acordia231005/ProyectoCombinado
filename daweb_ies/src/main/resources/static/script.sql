@@ -38,60 +38,60 @@ CREATE TABLE Matricula(
 
 -- Inserciones (Nota: Al usar SERIAL, no hace falta poner el campo 'id' en el INSERT)
 
-INSERT INTO Profesor (nombre, apellidos, especialidad) VALUES
-('José Antonio', 'Martínez López', 'Bases de Datos'),
-('María del Carmen', 'Ruiz Sánchez', 'Programación'),
-('Francisco', 'López García', 'Sistemas Informáticos'),
-('Laura', 'Sánchez Moreno', 'Entornos de Desarrollo'),
-('Miguel Ángel', 'Torres Navarro', 'Lenguajes de Marcas');
+INSERT INTO Profesor (id, nombre, apellidos, especialidad) VALUES
+(1, 'José Antonio', 'Martínez López', 'Bases de Datos'),
+(2, 'María del Carmen', 'Ruiz Sánchez', 'Programación'),
+(3, 'Francisco', 'López García', 'Sistemas Informáticos'),
+(4, 'Laura', 'Sánchez Moreno', 'Entornos de Desarrollo'),
+(5, 'Miguel Ángel', 'Torres Navarro', 'Lenguajes de Marcas');
 
-INSERT INTO Alumno (nombre, apellidos, ipasen) VALUES
-('Antonio', 'García Ruiz', 'ALU001'),
-('María', 'López Sánchez', 'ALU002'),
-('Juan', 'Pérez Martín', 'ALU003'),
-('Lucía', 'Fernández Ortega', 'ALU004'),
-('David', 'Romero Castro', 'ALU005'),
-('Carmen', 'Navarro Díaz', 'ALU006'),
-('Javier', 'Morales Vega', 'ALU007'),
-('Paula', 'Jiménez Ruiz', 'ALU008'),
-('Sergio', 'Torres Molina', 'ALU009'),
-('Ana', 'Castillo Moreno', 'ALU010'),
-('Pablo', 'Herrera León', 'ALU011'),
-('Laura', 'Domínguez Ríos', 'ALU012'),
-('Daniel', 'Ruiz Blanco', 'ALU013'),
-('Marta', 'Gómez Serrano', 'ALU014'),
-('Adrián', 'Sánchez Vega', 'ALU015'),
-('Sara', 'Molina Torres', 'ALU016'),
-('Diego', 'Vargas Ruiz', 'ALU017'),
-('Elena', 'Martín Castro', 'ALU018'),
-('Hugo', 'Fernández Ramos', 'ALU019'),
-('Inés', 'Romero Navarro', 'ALU020');
+INSERT INTO Alumno (id, nombre, apellidos, ipasen) VALUES
+(1, 'Antonio', 'García Ruiz', 'ALU001'),
+(2, 'María', 'López Sánchez', 'ALU002'),
+(3, 'Juan', 'Pérez Martín', 'ALU003'),
+(4, 'Lucía', 'Fernández Ortega', 'ALU004'),
+(5, 'David', 'Romero Castro', 'ALU005'),
+(6, 'Carmen', 'Navarro Díaz', 'ALU006'),
+(7, 'Javier', 'Morales Vega', 'ALU007'),
+(8, 'Paula', 'Jiménez Ruiz', 'ALU008'),
+(9, 'Sergio', 'Torres Molina', 'ALU009'),
+(10, 'Ana', 'Castillo Moreno', 'ALU010'),
+(11, 'Pablo', 'Herrera León', 'ALU011'),
+(12, 'Laura', 'Domínguez Ríos', 'ALU012'),
+(13, 'Daniel', 'Ruiz Blanco', 'ALU013'),
+(14, 'Marta', 'Gómez Serrano', 'ALU014'),
+(15, 'Adrián', 'Sánchez Vega', 'ALU015'),
+(16, 'Sara', 'Molina Torres', 'ALU016'),
+(17, 'Diego', 'Vargas Ruiz', 'ALU017'),
+(18, 'Elena', 'Martín Castro', 'ALU018'),
+(19, 'Hugo', 'Fernández Ramos', 'ALU019'),
+(20, 'Inés', 'Romero Navarro', 'ALU020');
 
-INSERT INTO Asignatura (nombre, horas, imparte) VALUES
-('Bases de Datos', 160, 1),
-('Programación', 240, 2),
-('Sistemas Informáticos', 200, 3),
-('Entornos de Desarrollo', 120, 4),
-('Lenguajes de Marcas', 100, 5);
+INSERT INTO Asignatura (id, nombre, horas, profesor_id) VALUES
+(1, 'Bases de Datos', 160, 1),
+(2, 'Programación', 240, 2),
+(3, 'Sistemas Informáticos', 200, 3),
+(4, 'Entornos de Desarrollo', 120, 4),
+(5, 'Lenguajes de Marcas', 100, 5);
 
-INSERT INTO Matricula (id_alum, id_asig, curso, nota_media) VALUES
-(1, 1, 2025, 7.50),
-(1, 2, 2025, 8.00),
-(2, 1, 2025, 6.25),
-(2, 3, 2025, 7.80),
-(3, 2, 2025, 5.50),
-(3, 5, 2025, 6.75),
-(4, 1, 2025, 9.00),
-(4, 4, 2025, 8.25),
-(5, 3, 2025, 7.10),
-(5, 2, 2025, 6.40),
-(6, 1, 2025, 5.90),
-(7, 5, 2025, 7.30),
-(8, 2, 2025, 8.90),
-(9, 3, 2025, 6.60),
-(10, 4, 2025, 7.70),
-(11, 1, 2025, 8.10),
-(12, 2, 2025, 6.80),
-(13, 3, 2025, 7.90),
-(14, 4, 2025, 5.60),
-(15, 5, 2025, 8.30);
+INSERT INTO Matricula (id_mat, id_alum, id_asig, curso, nota_media) VALUES
+(1, 1, 1, 2025, 7.50),
+(2, 1, 2, 2025, 8.00),
+(3, 2, 1, 2025, 6.25),
+(4, 2, 3, 2025, 7.80),
+(5, 3, 2, 2025, 5.50),
+(6, 3, 5, 2025, 6.75),
+(7, 4, 1, 2025, 9.00),
+(8, 4, 4, 2025, 8.25),
+(9, 5, 3, 2025, 7.10),
+(10, 5, 2, 2025, 6.40),
+(11, 6, 1, 2025, 5.90),
+(12, 7, 5, 2025, 7.30),
+(13, 8, 2, 2025, 8.90),
+(14, 9, 3, 2025, 6.60),
+(15, 10, 4, 2025, 7.70),
+(16, 11, 1, 2025, 8.10),
+(17, 12, 2, 2025, 6.80),
+(18, 13, 3, 2025, 7.90),
+(19, 14, 4, 2025, 5.60),
+(20, 15, 5, 2025, 8.30);

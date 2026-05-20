@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://dpg-d80p7gf7f7vs73d3lq20-a.ohio-postgres.render.com:5432/database_bhoi
+    username: database_bhoi_user
+    password: hUc1N1cDt1ocGci0yjMZuZvq8GU0Yxyo
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # create | update | validate | none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false

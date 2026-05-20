@@ -1,0 +1,23 @@
+services:
+  # ── BACKEND: Spring Boot (Docker) ──────────────────────────────────────────
+  - type: web
+    name: daweb-backend
+    runtime: docker
+    rootDir: daweb_ies
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /alumno
+
+  # ── FRONTEND: Angular SSR (Node) ───────────────────────────────────────────
+  - type: web
+    name: daweb-frontend
+    runtime: node
+    rootDir: FrontendConsumirAPI
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node dist/FrontendConsumirAPI/server/server.mjs
+    envVars:
+      - key: PORT
+        value: 4000
+      - key: NODE_ENV
+        value: production
